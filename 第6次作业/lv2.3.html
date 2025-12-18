@@ -62,7 +62,8 @@
             text.value='';
             }
         })
-        content.addEventListener('mouseup',function(){
+        content.addEventListener('contextmenu',function(e){
+            e.preventDefault();
             content.style.display='none';
         })
 
