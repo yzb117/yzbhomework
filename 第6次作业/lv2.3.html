@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #text{
+            width: 400px;
+            height: 100px;
+            position: absolute;
+            left: 200px;
+            background-color: #dadddf;
+            outline: none;
+            flex: 1;
+            padding: 10px;
+            resize: none;
+        }
+        .btn{
+            position: absolute;
+            left: 640px;
+            top: 50px;
+        }
+        .comment{
+            width: 800px;
+            height: 500px;
+            border: 1px solid black;
+            position: absolute;
+            top: 200px;
+            display: none;
+        }
+        .content{
+            display: none;
+           margin-left: 50px;
+        }
+        
+
+        
+    </style>
+</head>
+<body>
+    <textarea  id="text"></textarea>
+    <button class="btn">发送</button>
+    <div class="comment">
+        <div class="content"></div>
+    </div>
+
+
+
+    <script>
+        const text=document.querySelector('#text');
+        const comment=document.querySelector('.comment');
+        const content=document.querySelector('.content');
+        let i=0;
+        const btn=document.querySelector('.btn');
+        btn.addEventListener('click',function(){
+            if(text.value.trim() !== ''){
+            comment.style.display='block';
+            content.style.display='block';
+            i=text.value.trim();
+            content.innerHTML=i;
+            text.value='';
+            }
+        })
+        content.addEventListener('mouseup',function(){
+            content.style.display='none';
+        })
+
+
+
+    
+        
+    </script>
+</body>
+</html>

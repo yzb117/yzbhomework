@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <b>请选择您的爱好</b>
+        <br />
+    </div>
+    <div id="divlist">
+        <input type="checkbox" value="内卷" checked>内卷
+        <input type="checkbox" value="疯狂内卷" checked>疯狂内卷
+        <input type="checkbox" value="拼命内卷"checked>拼命内卷
+        <input type="checkbox" value="使劲内卷"checked>使劲内卷
+        <br />
+        <input type="button" value="全选" class="all">
+        <input type="button" value="全不选" class="no">
+        <input type="button" value="反选" class="op">
+    </div>
+    <script>
+        let boxes=document.querySelectorAll('#divlist [type="checkbox"]');
+        const all=document.querySelector('.all');
+        const no=document.querySelector('.no');
+        const op=document.querySelector('.op');
+        for(let i = 0;i<boxes.length;i++)
+        {
+            boxes[i].checked=false;
+        }
+        all.addEventListener('click',function(){
+            for(let i = 0;i<boxes.length;i++)
+        {
+            boxes[i].checked=true;
+        }
+        })
+        no.addEventListener('click',function(){
+            for(let i = 0;i<boxes.length;i++)
+        {
+            boxes[i].checked=false;
+        }
+        })
+        op.addEventListener('click',function(){
+            for(let i = 0;i<boxes.length;i++)
+        {
+            boxes[i].checked=!boxes[i].checked;
+        }
+        })
+
+
+
+
+
+
+    </script>
+</body>
+</html>
